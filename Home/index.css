@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('Home/image.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Nav Bar */
+nav ul {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 30px; /* Increase spacing between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;  /* Larger font size */
+    font-weight: bold;  /* Bold text */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+}
+
+/* Content */
+.content {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 500px;  /* Restrict width of content */
+}
+
+.content h1 {
+    font-size: 64px;  /* Bigger font size */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.content p {
+    margin: 20px 0;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #ff0077;
+    color: white;
+    text-decoration: none;
+    padding: 15px 40px; /* Adjusted padding for larger button */
+    font-size: 20px; /* Slightly larger text */
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 20px; /* Add space above button */
+}
+
+.cta-button:hover {
+    background-color: #e6006e;
+}
