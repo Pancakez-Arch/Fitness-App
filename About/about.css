@@ -1,0 +1,143 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation styling */
+header {
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for readability */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ff0077; /* Add hover effect for links */
+}
+
+/* About section styling */
+.about-section {
+    position: relative;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-top: 70px; /* To prevent overlap with fixed navbar */
+    background-image: url('https://nationalpti.org/wp-content/uploads/2014/02/Personal-Trainer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-section .content {
+    max-width: 60%;
+    background: rgba(0, 0, 0, 0.5); /* Add background for readability */
+    padding: 40px;
+    color: white;
+    border-radius: 10px;
+}
+
+.about-section .content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-section .content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-section .content {
+        max-width: 80%;
+        padding: 20px;
+    }
+
+    .about-section .content h1 {
+        font-size: 36px; /* Smaller heading on smaller screens */
+    }
+
+    .about-section .content p {
+        font-size: 16px; /* Smaller text for readability */
+    }
+
+    nav ul {
+        justify-content: space-around; /* Space out menu items evenly */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduce spacing between items */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-section {
+        position: relative;
+        min-height: 100vh; /* Ensures the section takes full height of the viewport */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        margin-top: 70px; /* To prevent overlap with fixed navbar */
+        background-image: url('https://nationalpti.org/wp-content/uploads/2014/02/Personal-Trainer.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .about-section .content {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .about-section .content h1 {
+        font-size: 28px; /* Smaller heading for mobile */
+    }
+
+    .about-section .content p {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+}

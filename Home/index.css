@@ -25,12 +25,38 @@ body {
 }
 
 /* Nav Bar */
+nav {
+    position: fixed;  /* Stick to the top of the viewport */
+    top: 0;           /* Align it to the top */
+    left: 0;          /* Align it to the left edge */
+    width: 100%;      /* Make the navbar span the full width */
+    z-index: 10;      /* Ensure it stays on top of other elements */
+    background-color: rgba(0, 0, 0, 0.8); /* Add some transparency to match the background */
+    padding: 20px;    /* Add some padding to the navbar */
+}
+
+nav .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+nav .bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
 nav ul {
-    position: absolute;
-    top: 20px;
-    right: 40px;
     display: flex;
     list-style-type: none;
+    justify-content: flex-end;  /* Aligns navbar items to the right */
+    margin: 0;   /* Reset margin */
+    padding: 0;  /* Reset padding */
 }
 
 nav ul li {
@@ -45,12 +71,45 @@ nav ul li a {
     letter-spacing: 0.5px; /* Add slight spacing between letters */
 }
 
+/* Mobile Navigation Hidden by Default */
+nav ul.nav-list {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    nav ul.nav-list {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+    }
+
+    nav ul.nav-list.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: right;
+    }
+
+    nav .menu-toggle {
+        display: flex;
+    }
+}
+
+
 /* Content */
 .content {
     position: absolute;
-    top: 50%;  /* Center vertically */
-    left: 10%;
-    transform: translateY(-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center the content horizontally and vertically */
+    text-align: center;  /* Center text inside the div */
     max-width: 500px;  /* Restrict width of content */
 }
 
@@ -58,6 +117,7 @@ nav ul li a {
     font-size: 64px;  /* Bigger font size */
     font-weight: bold;
     line-height: 1.2;
+    text-align: center;  /* Center the heading text */
 }
 
 .content p {
@@ -65,19 +125,19 @@ nav ul li a {
     max-width: 400px;
     font-size: 16px;
     line-height: 1.5;
+    text-align: center;  /* Center the paragraph text */
 }
 
-/* CTA Button */
 .cta-button {
     background-color: #ff0077;
     color: white;
     text-decoration: none;
-    padding: 15px 40px; /* Adjusted padding for larger button */
-    font-size: 20px; /* Slightly larger text */
+    padding: 15px 40px;
+    font-size: 20px;
     border-radius: 5px;
     display: inline-block;
     font-weight: bold;
-    margin-top: 20px; /* Add space above button */
+    margin-top: 20px;
 }
 
 .cta-button:hover {

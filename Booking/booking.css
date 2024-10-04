@@ -1,0 +1,166 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navigation styling */
+header {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #3498db;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+/* Group hours section styling */
+.group-hours-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px;
+    background-image: url('https://www.eliteprofitca.com/wp-content/uploads/2020/12/IMG_9030-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+}
+
+.group-hours-section .content {
+    max-width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.group-hours-section .content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.group-hours-section .content p {
+    font-size: 18px;
+}
+
+/* Calendar styling */
+.calendar {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.booked {
+    background-color: #f39c12;
+    color: rgb(0, 0, 0);
+}
+
+.book-now {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .group-hours-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .group-hours-section .content, .calendar {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
