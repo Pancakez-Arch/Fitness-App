@@ -1,33 +1,20 @@
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyCaPY-n4VtVe_Qy9WX9Pb5dtR6TafBdgX0",
-    authDomain: "iron-fit-b693c.firebaseapp.com",
-    projectId: "iron-fit-b693c",
-    storageBucket: "iron-fit-b693c.appspot.com",
-    messagingSenderId: "701232096789",
-    appId: "1:701232096789:web:b0f73cbcc0c2401da8901c",
-    measurementId: "G-GYWWVGEBDD"
-  };
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-
-// Login function
-document.getElementById('login-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            console.log('Logged in:', userCredential.user);
-            // Redirect or show user info
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            document.getElementById('error-message').innerText = errorMessage;
-        });
+    // Simple validation (in a real app, you'd verify these on the server)
+    if (username === 'admin' && password === '1234') {
+        // Store login status in localStorage
+        localStorage.setItem('loggedIn', 'true');
+        document.getElementById('message').textContent = 'You are logged in!';
+        document.getElementById('message').style.color = 'green';
+
+        // Redirect to the home page (or any other page)
+        window.location.href = "../Home/index.html";
+    } else {
+        document.getElementById('message').textContent = 'Invalid username or password';
+        document.getElementById('message').style.color = 'red';
+    }
 });
-
-

@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login with Firebase</title>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script src="login.js" defer></script> <!-- Link to your JS file -->
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="login-form">
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
-    <p id="error-message" style="color: red;"></p>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="cart-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Shopping Cart">
+            </div>
+            <form id="loginForm">
+                <div class="input-container">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p><a href="#" id="forgotPassword">Forgot password?</a></p>
+            <p id="message"></p>
+        </div>
+    </div>
+    <script src="login.js"></script>
 </body>
 </html>

@@ -75,6 +75,13 @@ function updateCalendar() {
 
 // Handle booking for the selected date
 function handleBooking(day) {
+    const loggedIn = localStorage.getItem('loggedIn');
+
+    if (loggedIn !== 'true') {
+        alert("You must be logged in to make a booking.");
+        return;
+    }
+
     const bookingKey = `${currentYear}-${currentMonth + 1}-${day}`;
 
     // Toggle booking
