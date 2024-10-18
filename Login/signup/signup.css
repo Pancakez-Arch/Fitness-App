@@ -1,3 +1,15 @@
+button,
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#alert {
+    display: none;
+  color: red;
+  margin-bottom: 10px;
+}
+
 /* General Styles */
 body {
     margin: 0;
@@ -77,6 +89,11 @@ button:hover {
     color: green;
 }
 
+#submit {
+    color: #007BFF;
+    text-decoration: none;
+}
+
 /* Desktop & larger screens */
 @media (min-width: 768px) {
     .login-container {
@@ -94,6 +111,7 @@ button:hover {
         font-size: 18px;
     }
 }
+
 
 /* Mobile & smaller screens */
 @media (max-width: 480px) {
