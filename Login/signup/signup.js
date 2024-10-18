@@ -1,41 +1,31 @@
-// Initialize Userfront
-Userfront.init("demo1234");  // Replace with your actual tenant ID
-
 // Handle signup form submission
-var signupFormEl = document.getElementById("signup-form");
-signupFormEl.addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent the default form behavior
-
-    var email = document.getElementById("email").value;
-    var accountName = document.getElementById("account-name").value;
-    var password = document.getElementById("password").value;
-    var passwordVerify = document.getElementById("password-verify").value;
-
-    // Verify passwords match
+document.getElementById('signup-form').addEventListener('submit', async function(e) {
+    e.preventDefault();  // Prevent default form behavior
+  
+    // Get the form values
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const passwordVerify = document.getElementById('password-verify').value;
+  
+    // Verify that passwords match
     if (password !== passwordVerify) {
-        setAlert("Password verification must match.");
-        return;
+      alert('Passwords do not match');
+      return;
     }
-
-    // Signup using Userfront
-    Userfront.signup({
-        method: "password",
-        email: email,
-        password: password,
-        data: {
-            accountName: accountName,
-        },
-    }).then(function() {
-        // Redirect on successful signup
-        window.location.href = "../../Home/index.html";
-    }).catch(function(error) {
-        setAlert(error.message);
+  
+    // Send the data to the backend
+    const response = await fetch('http://localhost:3000/Login/signup/signup.html', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
     });
-});
-
-// Set alert function to display error or success messages
-function setAlert(message) {
-    var alertEl = document.getElementById("alert");
-    alertEl.innerText = message;
-    alertEl.style.display = message ? "block" : "none";
-}
+  
+    // Handle the response
+    if (response.ok) {
+      alert('User registered successfully');
+      window.location.href = '../../Home/index.html';
+    } else {
+      alert('Failed to register user');
+    }
+  });
+  
