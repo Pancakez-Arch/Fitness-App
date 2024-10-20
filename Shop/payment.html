@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Booking</div>
+            <ul class="nav-links">
+                <li><a href="../Home/index.html">Home</a></li>
+                <li><a href="../About/about.html">About</a></li>
+                <li><a href="../Services/booking.html">Services</a></li>
+                <li><a href="../Shop/shop.html">Shop</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="payment-section">
+        <div class="payment-box">
+            <h1>Payment Information</h1>
+            <form id="payment-form">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="Enter your card number" maxlength="16">
+
+                <label for="card-expiry">Expiry Date</label>
+                <input type="text" id="card-expiry" placeholder="MM/YY">
+
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+
+                <button type="submit">Pay Now</button>
+            </form>
+            <div class="cart-items"></div>
+        </div>
+    </section>
+
+    <script src="payment.js"></script>
+</body>
+</html>

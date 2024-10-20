@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="shop.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header with the navigation bar -->
+    <header>
+        <nav>
+            <div class="logo">My Booking</div>
+            <ul class="nav-links">
+                <li><a href="../Home/index.html">Home</a></li>
+                <li><a href="../About/about.html">About</a></li>
+                <li><a href="../Services/booking.html">Services</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="../Login/login.html">Login</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        <div id="username-display" class="username-display"></div>
+    </header>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <h1>Shop</h1>
+        <div class="product-box"> <!-- Box around the products -->
+            <div class="product-container">
+                <!-- Product Items -->
+                <div class="product-card">
+                    <h2>9-ukers trening (1 økt pr. uke)</h2>
+                    <p>Price: 1450kr</p>
+                    <button class="add-to-cart" data-name="9-ukers trening (1 økt pr. uke)" data-price="1450">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>9-ukers trening (2 økter pr. uke)</h2>
+                    <p>Price: 2550kr</p>
+                    <button class="add-to-cart" data-name="9-ukers trening (2 økter pr. uke)" data-price="2550">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Frem til jul (1 økt pr. uke)</h2>
+                    <p>Price: 2700kr (540kr pr. mnd.)</p>
+                    <button class="add-to-cart" data-name="Frem til jul (1 økt pr. uke)" data-price="2700">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Frem til jul (2 økter pr. uke)</h2>
+                    <p>Price: 4200kr (840kr pr. mnd.)</p>
+                    <button class="add-to-cart" data-name="Frem til jul (2 økter pr. uke)" data-price="4200">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Ned i vekt-pakke (uke 43-50)</h2>
+                    <p>Price: 3500kr (8 gruppetimer, 3 privattimer)</p>
+                    <button class="add-to-cart" data-name="Ned i vekt-pakke" data-price="3500">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Private PT - 10 timer á 40 min</h2>
+                    <p>Price: 4900kr</p>
+                    <button class="add-to-cart" data-name="Private PT - 10 timer á 40 min" data-price="4900">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Private PT - 10 timer á 55 min</h2>
+                    <p>Price: 5400kr</p>
+                    <button class="add-to-cart" data-name="Private PT - 10 timer á 55 min" data-price="5400">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Private PT - 20 timer á 40 min</h2>
+                    <p>Price: 9500kr (Fra aug til des)</p>
+                    <button class="add-to-cart" data-name="Private PT - 20 timer á 40 min" data-price="9500">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <h2>Private PT - 20 timer á 55 min</h2>
+                    <p>Price: 10500kr (Fra aug til des)</p>
+                    <button class="add-to-cart" data-name="Private PT - 20 timer á 55 min" data-price="10500">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- View Cart Button -->
+            <a href="payment.html" class="view-cart">View Cart</a>
+        </div>
+    </section>
+
+    <script src="shop.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome, <span id="usernameDisplay"></span>!</h1>
+
+    <script>
+        // Check if the user is logged in by retrieving the username from localStorage
+        const username = localStorage.getItem('username');
+
+        if (username) {
+            // Display the username
+            document.getElementById('usernameDisplay').textContent = username;
+        } else {
+            // If no user is logged in, redirect to the login page
+            window.location.href = "../login/login.html";
+        }
+    </script>
+</body>
+</html>
