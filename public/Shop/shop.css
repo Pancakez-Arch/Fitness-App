@@ -128,3 +128,8 @@ nav {
     margin-top: 20px;
     font-size: 18px;
 }
+
+#checkout-button {
+    position: relative;
+    top: -20px;
+}
