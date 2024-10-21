@@ -1,52 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsDiv = document.querySelector('.cart-items');
 
-    // Load previous purchase history
-    function updateHistory() {
-        const historyList = document.getElementById('history-list');
-        historyList.innerHTML = '';
+    // Display cart items
+    cartItems.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.textContent = `${item.name}: ${item.price}kr`;
+        cartItemsDiv.appendChild(itemDiv);
+    });
 
-        history.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price} NOK`;
-            historyList.appendChild(li);
-        });
-    }
+    // Handle payment form submission
+    document.getElementById('payment-form').addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    // Update the cart display
-    function updateCart() {
-        const cartItems = document.getElementById('cart-items');
-        cartItems.innerHTML = '';
+        const cardNumber = document.getElementById('card-number').value;
 
-        cart.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - ${item.price} NOK`;
-            cartItems.appendChild(li);
-        });
-    }
-
-    // Checkout and store purchase history
-    function checkout() {
-        if (cart.length > 0) {
-            history.push(...cart);
-            localStorage.setItem('purchaseHistory', JSON.stringify(history));
-
-            alert('Purchase successful!');
-            cart.length = 0; // Clear cart after purchase
-            updateCart();
-            updateHistory();
-
-            // Redirect to payment page
-            window.location.href = 'payment.html';
+        // Basic validation for 16-digit card number
+        if (cardNumber.length === 16 && !isNaN(cardNumber)) {
+            // Show custom popup
+            showPopup('Payment Successful');
+            localStorage.removeItem('cart'); // Clear the cart after successful payment
         } else {
-            alert('Cart is empty!');
+            showPopup('Invalid Card Number');
         }
-    }
-
-    // Add event listener to checkout button
-    document.getElementById('checkout-button').addEventListener('click', checkout);
-
-    // Load previous purchase history
-    updateHistory();
+    });
 });
+
+// Function to show a popup message
+function showPopup(message) {
+    // Create popup element
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.textContent = message;
+
+    // Add popup to the body
+    document.body.appendChild(popup);
+
+    // Automatically remove the popup after 3 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 3000);
+}
+
